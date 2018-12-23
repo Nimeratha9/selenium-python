@@ -1,0 +1,27 @@
+from selenium import webdriver
+
+class logintest:
+        dr=webdriver.Chrome("C:\\SELENIUM\\chromedriver_win32\\chromedriver.exe")
+        dr.get("http://127.0.0.1/orangehrm-3.3.1/symfony/web/index.php/auth/login")
+        username=dr.find_element_by_id("txtUsername")
+        username.send_keys("ADMIN")
+        password=dr.find_element_by_id("txtPassword")
+        password.send_keys("ADMIN")
+        loginButton=dr.find_element_by_id("btnLogin")
+        loginButton.click()
+
+        empbutton=dr.find_element_by_id("menu_pim_viewPimModule")
+        empbutton.click()
+        addEmpbutton=dr.find_element_by_id("btnAdd")
+        addEmpbutton.click()
+        firstNme=dr.find_element_by_id("firstName")
+        firstNme.send_keys("Nimeratha")
+        middleNme=dr.find_element_by_id("middleName")
+        middleNme.send_keys("Chandrakant")
+        lastNme=dr.find_element_by_id("lastName")
+        lastNme.send_keys("Kadam")
+        empid=dr.find_element_by_id("employeeId")
+        empid.send_keys("5")
+        saveEmpBttn=dr.find_element_by_id("btnSave")
+        saveEmpBttn.click()
+dr.quit()
